@@ -1,6 +1,6 @@
 require("dotenv").config();
 import request from "request";
-var truyvan;
+let truyvan;
 const VERIFY_TOKEN = process.env.VERIFY_TOKEN;
 const PAGE_VERIFY_TOKEN = process.env.PAGE_VERIFY_TOKEN;
 
