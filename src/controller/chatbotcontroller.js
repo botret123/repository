@@ -65,13 +65,9 @@ function handlePostback(sender_psid, received_postback) {
 function callSendAPI(sender_psid, response) {
   // Construct the message body
   let request_body = {
-         "recipient": {
-      "id": "6411866245531204"
-        },
-        "messaging_type": sender_psid,
-        "message": {
-          "text": "ahihi"
-        }
+         "recipient": {"id": sender_psid},
+        "messaging_type": "RESPONSE",
+        "message": {"text": "ahihi"}
   };
 
   // Send the HTTP request to the Messenger Platform
