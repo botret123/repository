@@ -22,7 +22,8 @@ let postWebhook = (req, res) =>{
           let webhook_event = entry.messaging[0];
           console.log(webhook_event);
 
-
+          let sender_uid = webhook_event.sender.uid;
+          console.log(sender_uid);
           // Get the sender PSID
           let sender_psid = webhook_event.sender.id;
           console.log('Sender PSID: ' + sender_psid);
@@ -30,7 +31,7 @@ let postWebhook = (req, res) =>{
           // Check if the event is a message or postback and
           // pass the event to the appropriate handler function
           if (webhook_event.message) {
-              handleMessage(sender_psid, webhook_event.message);
+              handleMessage(sender_psid, webhook_event.message,sender_uid);
           } else if (webhook_event.postback) {
               handlePostback(sender_psid, webhook_event.postback);
           }
@@ -89,14 +90,14 @@ function callSendAPI(sender_psid, response) {
 }
  
 
-function handleMessage(sender_psid, received_message) {
+function handleMessage(sender_psid, received_message,sender_uid) {
   let response;
   if (received_message.text) {
     console.log("-----------------------------")
-    truyvan = sender_psid +received_message.text;
+    truyvan = sender_psid +"|"+received_message.text+ "|"+sender_uid;
     console.log(received_message.text)
-    console.log(truyvan +"|"+received_message.text)
-   
+    console.log(truyvan +"---|---"+received_message.text)
+
     console.log("-----------------------------")
     response = {
       "text": `chào bạn tin nhắn ---------:"${received_message.text}".không hợp lệ`
