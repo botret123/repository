@@ -65,10 +65,13 @@ function handlePostback(sender_psid, received_postback) {
 function callSendAPI(sender_psid, response) {
   // Construct the message body
   let request_body = {
-      "recipient": {
-          "id": sender_psid
-      },
-      "message": { "text": response }
+         "recipient": {
+      "id": "6411866245531204"
+        },
+        "messaging_type": sender_psid,
+        "message": {
+          "text": "ahihi"
+        }
   };
 
   // Send the HTTP request to the Messenger Platform
@@ -76,18 +79,12 @@ function callSendAPI(sender_psid, response) {
      "uri": "https://graph.facebook.com/v16.0/116259271419513/messages",
       "qs": { "access_token": PAGE_VERIFY_TOKEN },
       "method": "POST",
-      "json": {
-        "recipient": {
-          "id": "6411866245531204"
-        },
-        "messaging_type": "RESPONSE",
-        "message": {
-          "text": "Hello, world!"
-        }
+      "json": request_body
+        
       }
   }, (err, res, body) => {
       if (!err) {
-          console.log('message sent!');
+          console.log('----------------------message sent!');
       } else {
           console.error("Unable to send message:" + err);
       }
