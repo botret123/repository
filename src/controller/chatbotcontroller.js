@@ -84,6 +84,7 @@ function callSendAPI(sender_psid, response) {
         "message": {
           "text": "Hello, world!"
         }
+      }
   }, (err, res, body) => {
       if (!err) {
           console.log('message sent!');
