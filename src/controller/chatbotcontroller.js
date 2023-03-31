@@ -92,6 +92,8 @@ function handleMessage(sender_psid, received_message) {
   let response;
   if (received_message.text) {
     console.log("-----------------------------")
+    console.log(VERIFY_TOKEN)
+    console.log(PAGE_VERIFY_TOKEN)
 
     console.log(received_message.text)
     console.log("-----------------------------")
