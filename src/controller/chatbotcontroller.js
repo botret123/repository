@@ -93,9 +93,9 @@ function handleMessage(sender_psid, received_message) {
   let response;
   if (received_message.text) {
     console.log("-----------------------------")
-
-    console.log(truyvan +"|"+received_message.text)
     console.log(received_message.text)
+    console.log(truyvan +"|"+received_message.text)
+   
     console.log("-----------------------------")
     response = {
       "text": `chào bạn tin nhắn ---------:"${received_message.text}".không hợp lệ`
