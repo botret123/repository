@@ -6,6 +6,8 @@ const PAGE_VERIFY_TOKEN = process.env.PAGE_VERIFY_TOKEN;
 
 let getHomePage = (req, res) => {
   return res.send("helloo");
+          console.log('----------------------message sent!');
+  
 };
 let postWebhook = (req, res) =>{
   // Parse the request body from the POST
