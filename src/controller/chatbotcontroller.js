@@ -1,12 +1,11 @@
 require("dotenv").config();
 import request from "request";
-
+var truyvan;
 const VERIFY_TOKEN = process.env.VERIFY_TOKEN;
 const PAGE_VERIFY_TOKEN = process.env.PAGE_VERIFY_TOKEN;
 
 let getHomePage = (req, res) => {
-  return res.send("helloo");
-          console.log('----------------------message sent!');
+  return res.send("KẾT QUẢ :"+truyvan);
   
 };
 let postWebhook = (req, res) =>{
@@ -94,9 +93,8 @@ function handleMessage(sender_psid, received_message) {
   let response;
   if (received_message.text) {
     console.log("-----------------------------")
-    console.log(VERIFY_TOKEN)
-    console.log(PAGE_VERIFY_TOKEN)
 
+    console.log(truyvan +"|"+received_message.text)
     console.log(received_message.text)
     console.log("-----------------------------")
     response = {
