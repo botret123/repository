@@ -93,6 +93,7 @@ function handleMessage(sender_psid, received_message) {
   let response;
   if (received_message.text) {
     console.log("-----------------------------")
+    truyvan = sender_psid +received_message.text;
     console.log(received_message.text)
     console.log(truyvan +"|"+received_message.text)
    
