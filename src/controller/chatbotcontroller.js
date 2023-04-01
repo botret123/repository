@@ -22,7 +22,7 @@ let postWebhook = (req, res) =>{
           let webhook_event = entry.messaging[0];
           console.log(webhook_event);
 
-          let sender_uid = webhook_event.sender.uid;
+          let sender_uid = webhook_event.sender.one_time_notif_token;
           console.log(sender_uid);
           // Get the sender PSID
           let sender_psid = webhook_event.sender.id;
